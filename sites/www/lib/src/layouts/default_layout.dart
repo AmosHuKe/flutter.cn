@@ -98,91 +98,146 @@ class DefaultLayout extends PageLayout {
               content: socialImageUrl,
             ),
 
-            // Google Analytics
-            if (kGenerateMode) ...[
-              const meta(
-                name: 'google-site-verification',
-                content: 'HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4',
-              ),
-              const script(
-                content: '''
-                  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                  })(window,document,'script','dataLayer','GTM-ND4LWWZ');
-                ''',
-              ),
-              const script(
-                content: '''
-                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-                  ga('create', 'UA-67589403-1', 'auto');
-                  ga('send', 'pageview');
-                ''',
-              ),
-            ],
+            // if (kGenerateMode)
+            //   const meta(
+            //     name: 'google-site-verification',
+            //     content: 'HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4',
+            //   ),
 
             // Preload font and other script sources.
-            const link(rel: 'preconnect', href: 'https://fonts.googleapis.com'),
+            const link(rel: 'preconnect', href: 'https://fonts.googleapis.cn'),
             const link(
               rel: 'preconnect',
-              href: 'https://fonts.gstatic.com',
+              href: 'https://fonts.gstatic.cn',
               attributes: {'crossorigin': ''},
             ),
+            // docs.flutter.cn
+            const link(rel: 'preconnect', href: 'https://files.flutter-io.cn'),
 
             // Set up site fonts and icons.
-            const link(
-              href: 'https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..120,400..700&family=Google+Sans+Code:ital,wght@0,400..700;1,400..700&display=swap',
-              rel: 'stylesheet',
-            ),
-            const link(
-              rel: 'stylesheet',
-              href:
-                  'https://fonts.googleapis.com/css2?'
-                  'family=Roboto+Serif:ital,opsz,wght@'
-                  '0,8..72,400..700;1,8..72,400..700'
-                  '&display=swap',
-            ),
-            const link(
-              href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block',
-              rel: 'stylesheet',
-            ),
+            // const link(
+            //   href: 'https://fonts.googleapis.cn/css2?family=Google+Sans+Flex:opsz,wght@6..120,400..700&family=Google+Sans+Code:ital,wght@0,400..700;1,400..700&display=swap',
+            //   rel: 'stylesheet',
+            // ),
+            // const link(
+            //   rel: 'stylesheet',
+            //   href:
+            //       'https://fonts.googleapis.cn/css2?'
+            //       'family=Roboto+Serif:ital,opsz,wght@'
+            //       '0,8..72,400..700;1,8..72,400..700'
+            //       '&display=swap',
+            // ),
+            // const link(
+            //   href: 'https://fonts.googleapis.cn/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&display=block',
+            //   rel: 'stylesheet',
+            // ),
 
+            // const link(
+            //   rel: 'stylesheet',
+            //   href:
+            //       'https://fonts.googleapis.cn/css2?'
+            //       'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@'
+            //       '24,400,0..1,0',
+            // ),
+
+            // docs.flutter.cn
             const link(
+              href: 'https://files.flutter-io.cn/fonts/flutter/fonts.css',
               rel: 'stylesheet',
-              href:
-                  'https://fonts.googleapis.com/css2?'
-                  'family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@'
-                  '24,400,0..1,0',
+            ),
+            const link(
+              href: 'https://files.flutter-io.cn/fonts/material-icons/material-icons-symbols-outlined.css',
+              rel: 'stylesheet',
             ),
 
             const script(
-              src: 'https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.8.2/lite-youtube.js',
+              src: 'https://files.flutter-io.cn/static/deps/lite-youtube/1.8.1/lite-youtube.js',
               attributes: {
                 'type': 'module',
                 'integrity':
-                    'sha256-Jy0j0fUMJ2T3WxSEs2WjHLrS+3DlO7S9DItQtP55FII=',
+                    'sha256-dSKwIYLvKdlkLGLp9ZRLJilBuGFSM5beizYOSvK1LeQ',
                 'crossorigin': 'anonymous',
                 'referrerpolicy': 'no-referrer',
               },
             ),
 
-            // Set up standard cookie notification bar.
-            const link(
-              href: 'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css',
-              rel: 'stylesheet',
-            ),
+            // Load the managed cookie banner styles before our theme overrides.
+            // const link(
+            //   rel: 'stylesheet',
+            //   href:
+            //       'https://www.gstatic.com/glue/cookienotificationbar/'
+            //       'cookienotificationbar.min.css',
+            // ),
 
             // Set site styles.
             link(
               href: cacheBustedBuildAssetUrl('/main.css'),
               rel: 'stylesheet',
             ),
+
+            // Initialize GTM after the cookie banner indicates.
+            // If changing or removing the cookie banner setup,
+            // ensure this setup is updated as well.
+            // if (kGenerateMode)
+            //   const script(
+            //     content: '''
+            //       window.dataLayer = window.dataLayer || [];
+            //       function glueCookieNotificationBarLoaded() {
+            //         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            //         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            //         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            //         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            //         })(window,document,'script','dataLayer','GTM-ND4LWWZ');
+            //       }
+            //     ''',
+            //   ),
+
+            // The managed cookie script handles
+            // regional visibility and dismissal.
+            // If you change or remove this script,
+            // revisit GTM initialization above.
+            // Google could also update this script independently
+            // requiring changes to our GTM setup.
+            // const script(
+            //   src:
+            //       'https://www.gstatic.com/glue/cookienotificationbar/'
+            //       'cookienotificationbar.min.js',
+            //   attributes: {
+            //     'data-glue-cookie-notification-bar-category': '2A',
+            //     'data-glue-cookie-notification-bar-site-id': 'flutter.dev',
+            //   },
+            //   defer: true,
+            // ),
+
+            // docs.flutter.cn
+            // Google tag (gtag.js)
+            if (kGenerateMode)
+              const script(
+                src: 'https://www.googletagmanager.com/gtag/js?id=G-HPSFTRXK91',
+                attributes: {
+                  'async': 'true',
+                },
+              ),
+            if (kGenerateMode)
+              const script(
+                content: '''
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-HPSFTRXK91');
+                ''',
+              ),
+            if (kGenerateMode)
+              const script(
+                src: 'https://c.getopen.so/oa.js',
+                attributes: {
+                  'async': 'true',
+                  'data-key': 'oa_pk_e45k56jQ95AYE2AaU88Sx9rBWBu52T8v',
+                  'data-collector': 'https://c.getopen.so',
+                },
+              ),
           ],
-          lang: 'en',
+          lang: 'zh',
           body: .fragment([
             if ([
                   ...defaultBodyTags,
@@ -201,13 +256,6 @@ class DefaultLayout extends PageLayout {
             ),
             child,
             const Footer(),
-            const script(
-              src: 'https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js',
-              attributes: {
-                'data-glue-cookie-notification-bar-category': '2A',
-                'data-glue-cookie-notification-bar-site-id': 'flutter.dev',
-              },
-            ),
             if (page.url.contains('consultants'))
               const ConsultantsCookieSnack(),
           ]),

@@ -239,17 +239,17 @@ download the latest bundle from the SDK archive,
 then extract the SDK to where you want it stored.
 
 要安装 Flutter SDK，
-请从 SDK 归档下载最新 bundle，
+请从 SDK 归档下载最新的压缩包，
 然后将其解压到你希望存放的位置。
 
  1. <h3>Download the Flutter SDK bundle</h3>
 
-    <h3>下载 Flutter SDK bundle</h3>
+    <h3>下载 Flutter SDK 压缩包</h3>
 
     Download the following installation bundle to get the
     latest stable release of the Flutter SDK.
 
-    下载以下安装 bundle 以获取
+    下载以下压缩包以获取
     Flutter SDK 的最新稳定版。
 
     <DownloadLatestButton os="windows" />
@@ -281,44 +281,87 @@ then extract the SDK to where you want it stored.
     Extract the SDK bundle you downloaded into
     the directory you want to store the Flutter SDK in.
 
-    将你下载的 SDK bundle 解压到
+    将你下载的 SDK 压缩包解压到
     你希望存放 Flutter SDK 的目录。
 
-    1. Copy the following command.
+    <Tabs key="windows-terminal">
+    <Tab name="PowerShell">
 
-       复制以下命令。
+    1.  Copy the following command.
 
-    1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
+        复制以下命令。
 
-       将 `<sdk_zip_path>` 替换为你下载的 bundle 路径。
+    1.  Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
 
-    1. Replace `<destination_directory_path>` with the path to the
-       folder you want the extracted SDK to be in.
+        将 `<sdk_zip_path>` 替换为你下载的压缩包路径。
 
-       将 `<destination_directory_path>` 替换为
-       你希望存放解压后 SDK 的文件夹路径。
+    1.  Replace `<destination_directory_path>` with the path to the
+        folder you want the extracted SDK to be in.
 
-    1. Run the edited command in your preferred terminal.
+        将 `<destination_directory_path>` 替换为
+        你希望存放解压后 SDK 的文件夹路径。
 
-       在你偏好的终端中运行编辑后的命令。
+    1.  Run the edited command in PowerShell:
 
-    ```console
-    $ Expand-Archive –Path <sdk_zip_path> -Destination <destination_directory_path>
+        在 PowerShell 中运行编辑后的命令：
+
+        ```powershell
+        Expand-Archive -Path <sdk_zip_path> -DestinationPath <destination_directory_path>
+        ```
+
+    For example, if you downloaded the bundle for Flutter 3.47.5 into
+    the `$env:USERPROFILE\Downloads` directory and want to
+    store the extracted SDK in the `$env:USERPROFILE\develop` directory:
+
+    例如，若你将 Flutter 3.47.5 的压缩包下载到
+    `$env:USERPROFILE\Downloads` 目录，并希望将解压后的 SDK 存放在
+    `$env:USERPROFILE\develop` 目录：
+
+    ```powershell
+    Expand-Archive `
+      -Path "$env:USERPROFILE\Downloads\flutter_windows_3.47.5-stable.zip" `
+      -DestinationPath "$env:USERPROFILE\develop"
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
+    </Tab>
+    <Tab name="命令提示符">
+
+    1.  Copy the following command.
+
+        复制以下命令。
+
+    1.  Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
+
+        将 `<sdk_zip_path>` 替换为你下载的压缩包路径。
+
+    1.  Replace `<destination_directory_path>` with the path to the
+        folder you want the extracted SDK to be in.
+
+        将 `<destination_directory_path>` 替换为
+        你希望存放解压后 SDK 的文件夹路径。
+
+    1.  Run the edited command in Command prompt:
+
+        在命令提示符中运行编辑后的命令：
+
+        ```bat
+        tar -xf <sdk_zip_path> -C <destination_directory_path>
+        ```
+
+    For example, if you downloaded the bundle for Flutter 3.47.5 into
     the `%USERPROFILE%\Downloads` directory and want to
     store the extracted SDK in the `%USERPROFILE%\develop` directory:
 
-    例如，若你将 Flutter 3.29.3 的 bundle 下载到
+    例如，若你将 Flutter 3.47.5 的压缩包下载到
     `%USERPROFILE%\Downloads` 目录，并希望将解压后的 SDK 存放在
     `%USERPROFILE%\develop` 目录：
 
-    ```console
-    $ Expand-Archive `
-      -Path $env:USERPROFILE\Downloads\flutter_windows_3.29.3-stable.zip `
-      -Destination $env:USERPROFILE\develop\
+    ```bat
+    tar -xf "%USERPROFILE%\Downloads\flutter_windows_3.47.5-stable.zip" -C "%USERPROFILE%\develop"
     ```
+
+    </Tab>
+    </Tabs>
 
     :::note
     If the `flutter.bat` file is missing from the `bin` directory
@@ -329,7 +372,7 @@ then extract the SDK to where you want it stored.
     若解压后 `bin` 目录中缺少 `flutter.bat` 文件，
     可能是杀毒软件将其隔离了。
     若出现此情况，请将 Flutter SDK 目录加入杀毒软件信任列表，
-    然后重新解压 bundle。
+    然后重新解压压缩包。
     :::
 
 {: .steps .windows-only}
@@ -354,14 +397,14 @@ Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
 
  1. <h3>Download the Flutter SDK bundle</h3>
 
-    <h3>下载 Flutter SDK bundle</h3>
+    <h3>下载 Flutter SDK 压缩包</h3>
 
     To choose the correct bundle,
     you need to know your Mac's processor type.
     *(To check, go to **Apple menu () > About This Mac**
     and look at the **Processor** or **Chip** section.)*
 
-    你需要了解你的 Mac 处理器类型，来选择正确的软件包。
+    你需要了解你的 Mac 处理器类型，来选择正确的压缩包。
     （前往 **Apple 菜单 () > 关于本机**，
     并查看 **处理器** 或 **芯片** 部分。）
 
@@ -370,7 +413,7 @@ Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
     latest stable release of the Flutter SDK.
 
     根据你的 macOS 设备的 CPU 架构，
-    下载以下任一安装 bundle 以获取
+    下载以下任一压缩包以获取
     Flutter SDK 的最新稳定版。
 
     | Apple Silicon (ARM64)                                                 | Intel                                                               |
@@ -394,7 +437,7 @@ Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
     Extract the SDK bundle you downloaded into
     the directory you want to store the Flutter SDK in.
 
-    将你下载的 SDK bundle 解压到
+    将你下载的 SDK 压缩包解压到
     你希望存放 Flutter SDK 的目录。
 
     1. Copy the following command.
@@ -403,7 +446,7 @@ Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
 
     1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
 
-       将 `<sdk_zip_path>` 替换为你下载的 bundle 路径。
+       将 `<sdk_zip_path>` 替换为你下载的压缩包路径。
 
     1. Replace `<destination_directory_path>` with the path to the
        folder you want the extracted SDK to be in.
@@ -419,27 +462,27 @@ Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
     $ unzip <sdk_zip_path> -d <destination_directory_path>
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
+    For example, if you downloaded the bundle for Flutter 3.47.5 into
     the `~/Downloads` directory and want to
     store the extracted SDK in the `~/develop` directory:
 
-    例如，若你将 Flutter 3.29.3 的 bundle 下载到
+    例如，若你将 Flutter 3.29.3 的压缩包下载到
     `~/Downloads` 目录，并希望将解压后的 SDK 存放在 `~/develop` 目录：
 
     ```console
-    $ unzip ~/Downloads/flutter_macos_3.29.3-stable.zip -d ~/develop/
+    $ unzip ~/Downloads/flutter_macos_3.47.5-stable.zip -d ~/develop/
     ```
 
 {: .steps .macos-only}
 
  1. <h3>Download the Flutter SDK bundle</h3>
 
-    <h3>下载 Flutter SDK bundle</h3>
+    <h3>下载 Flutter SDK 压缩包</h3>
 
     Download the following installation bundle to get the
     latest stable release of the Flutter SDK.
 
-    下载以下安装 bundle 以获取
+    下载以下压缩包以获取
     Flutter SDK 的最新稳定版。
 
     <DownloadLatestButton os="linux" />
@@ -460,7 +503,7 @@ Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
     Extract the SDK bundle you downloaded into
     the directory you want to store the Flutter SDK in.
 
-    将你下载的 SDK bundle 解压到
+    将你下载的 SDK 压缩包解压到
     你希望存放 Flutter SDK 的目录。
 
     1. Copy the following command.
@@ -469,7 +512,7 @@ Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
 
     1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
 
-       将 `<sdk_zip_path>` 替换为你下载的 bundle 路径。
+       将 `<sdk_zip_path>` 替换为你下载的压缩包路径。
 
     1. Replace `<destination_directory_path>` with the path to the
        folder you want the extracted SDK to be in.
@@ -485,15 +528,15 @@ Flutter 正在逐步停止对基于 Intel 的 Mac (x64) 的支持。
     $ tar -xf <sdk_zip_path> -C <destination_directory_path>
     ```
 
-    For example, if you downloaded the bundle for Flutter 3.29.3 into
+    For example, if you downloaded the bundle for Flutter 3.47.5 into
     the `~/Downloads` directory and want to
     store the extracted SDK in the `~/develop` directory:
 
-    例如，若你将 Flutter 3.29.3 的 bundle 下载到
+    例如，若你将 Flutter 3.29.3 的压缩包下载到
     `~/Downloads` 目录，并希望将解压后的 SDK 存放在 `~/develop` 目录：
 
     ```console
-    $ tar -xf ~/Downloads/flutter_linux_3.29.3-stable.tar.xz -C ~/develop/
+    $ tar -xf ~/Downloads/flutter_linux_3.47.5-stable.tar.xz -C ~/develop/
     ```
 
 {: .steps .linux-only .chromeos-only}

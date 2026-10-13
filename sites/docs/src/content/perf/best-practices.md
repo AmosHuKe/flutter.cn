@@ -352,7 +352,7 @@ and are potentially costly:
   [`Text`][]&mdash;
   当有 `overflowShader` 时，会调用`saveLayer()`
 
-[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
+[`Chip`]: {{site.material_ui}}/Chip-class.html
 [`ColorFilter`]: {{site.api}}/flutter/dart-ui/ColorFilter-class.html
 [`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
 [`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html

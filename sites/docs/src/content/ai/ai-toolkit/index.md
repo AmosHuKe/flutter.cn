@@ -121,12 +121,12 @@ dependencies:
 
 <li><b><t>Configuration</t><t>配置</t></b>
 
-The AI Toolkit supports both the Gemini endpoint (for prototyping) and the
-Vertex endpoint (for production). Both require a Firebase project and the
+The AI Toolkit supports both the Gemini Developer API (for prototyping) and the
+Firebase AI Logic production endpoint. Both require a Firebase project and the
 `firebase_core` package to be initialized, as described in the [Get started with
 the Gemini API using the Firebase AI Logic SDKs][firebase_ai] docs.
 
-AI 工具包同时支持 Gemini 端点（用于原型）与 Vertex 端点（用于生产）。
+AI 工具包同时支持 Gemini Developer API（用于原型）与 Firebase AI Logic 端点（用于生产）。
 两者均需 Firebase 项目并初始化 `firebase_core` package，详见
 [使用 Firebase AI Logic SDK 开始使用 Gemini API][firebase_ai] 文档。
 
@@ -205,9 +205,10 @@ of that is handled as part of the Firebase project.
 `FirebaseProvider` 类向 `LlmChatView` 暴露 Firebase AI Logic SDK。
 注意你需提供模型名称（[有多种选项][options] 可选），但无需提供 API 密钥，均由 Firebase 项目处理。
 
-For production workloads, it's easy to swap in the Firebase Logic AI endpoint:
+For production workloads, it's easy to swap in the Firebase AI Logic production
+endpoint:
 
-生产工作负载可轻松切换为 Firebase Logic AI 端点：
+生产工作负载可轻松切换为 Firebase Logic AI 的生产端点：
 
 ```dart
 class ChatPage extends StatelessWidget {
@@ -218,7 +219,7 @@ class ChatPage extends StatelessWidget {
         appBar: AppBar(title: const Text(App.title)),
         body: LlmChatView(
           provider: FirebaseProvider(
-            // Use the Vertex AI endpoint
+            // Use the production endpoint
             model: FirebaseAI.vertexAI().generativeModel(
               model: 'gemini-2.5-flash',
             ),
@@ -235,7 +236,7 @@ examples.
 完整示例请参阅 [gemini.dart] 与 [vertex.dart][vertex.dart] 示例。
 
 [options]:
-    https://firebase.google.com/docs/vertex-ai/gemini-models#available-model-names
+    https://firebase.google.com/docs/ai-logic/models
 [gemini.dart]:
     https://github.com/flutter/ai/blob/main/example/lib/gemini/gemini.dart
 [vertex.dart]:
@@ -311,12 +312,14 @@ attachments, ensure that your app has the necessary permissions:
 
 **firebase_options.dart**
 
-To use the [Vertex AI example app][vertex-ex], place your Firebase configuration
-details into the `example/lib/firebase_options.dart` file. You can do this with
-the `flutterfire CLI` tool as described in the [Add Firebase to your Flutter
-app][add-fb] docs **from within the `example` directory**.
+To use the [Firebase AI Logic example app][vertex-ex],
+place your Firebase configuration details into the
+`example/lib/firebase_options.dart` file.
+You can do this with the `flutterfire CLI` tool as described in the
+[Add Firebase to your Flutter app][add-fb] docs
+**from within the `example` directory**.
 
-要使用 [Vertex AI 示例应用][vertex-ex]，将 Firebase 配置写入 `example/lib/firebase_options.dart`。
+要使用 [Firebase AI Logic 示例应用][vertex-ex]，将 Firebase 配置写入 `example/lib/firebase_options.dart`。
 可在 **`example` 目录内** 使用 `flutterfire CLI`，按
 [将 Firebase 添加到你的 Flutter 应用][add-fb] 文档操作。
 
@@ -324,12 +327,13 @@ app][add-fb] docs **from within the `example` directory**.
 
 `firebase_options.dart` 安全注意事项
 
-If your Flutter app calls Gemini or Vertex AI directly from the client, do not
-commit `firebase_options.dart` to a public repository. Anyone could reuse your
-app configuration to send requests to your AI endpoint, consuming quota and
-potentially causing billing costs.
+If your Flutter app calls Gemini APIs directly from the client,
+do not commit `firebase_options.dart` to a public repository.
+Anyone could reuse your app configuration to send requests to your AI endpoint,
+consuming quota and potentially causing billing costs.
 
-若 Flutter 应用从客户端直接调用 Gemini 或 Vertex AI，请勿将 `firebase_options.dart` 提交到公开仓库。
+若 Flutter 应用从客户端直接调用 Gemini API，
+请勿将 `firebase_options.dart` 提交到公开仓库。
 他人可能复用你的应用配置向 AI 端点发送请求，消耗配额并可能产生费用。
 
 While this guide shows direct client-side calls for simplicity, for production

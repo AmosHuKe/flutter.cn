@@ -64,6 +64,7 @@ Import the `http` package.
 <?code-excerpt "lib/main.dart (Http)"?>
 ```dart
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 ```
 
 {% render "docs/cookbook/networking/internet-permission.md" %}
@@ -379,8 +380,8 @@ FutureBuilder<Album>(
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart';
 
 Future<Album> fetchAlbum() async {
   final response = await http.get(

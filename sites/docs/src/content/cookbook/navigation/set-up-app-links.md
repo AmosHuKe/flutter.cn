@@ -79,7 +79,7 @@ Flutter 团队维护 `go_router` package。
     要处理路由，在 `main.dart` 文件中创建 `GoRouter` 对象：
 
     ```dart title="main.dart"
-    import 'package:flutter/material.dart';
+    import 'package:material_ui/material_ui.dart';
     import 'package:go_router/go_router.dart';
 
     void main() => runApp(MaterialApp.router(routerConfig: router));

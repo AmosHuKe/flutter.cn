@@ -1655,9 +1655,35 @@ For more information on `build.gradle` files, see the
 ### iOS
 
 The following example sets a dependency for
-`url_launcher` in `hello/ios/hello.podspec`:
+`url_launcher` in `hello/ios/hello/Package.swift`:
 
-在 `hello/ios/hello.podspec` 文件中为 `url_launcher` 插件设定依赖关系。
+```swift
+let package = Package(
+  // lines skipped
+  dependencies: [
+    .package(path: "../url_launcher"),
+  ],
+  targets: [
+    .target(
+      name: "hello",
+      dependencies: [
+        .product(name: "url_launcher", package: "url_launcher"),
+      ],
+    ),
+  ],
+)
+```
+
+You can now `import url_launcher` and
+access the source code at `hello/ios/hello/Sources`.
+
+For additional details on Swift package manifests,
+consult [Apple's PackageDescription documentation][].
+
+#### CocoaPods (legacy)
+
+If your plugin supports CocoaPods for backward compatibility,
+set a dependency in `hello/ios/hello.podspec`:
 
 ```ruby
 Pod::Spec.new do |s|
@@ -1672,8 +1698,8 @@ at `hello/ios/Classes`.
 现在你可以在 `hello/ios/Classes` 目录下的源代码文件中使用 `#import "UrlLauncherPlugin.h"` 
 并访问 `UrlLauncherPlugin` 这个类了。
 
-For additional details on `.podspec` files, see the
-[CocoaPods Documentation][].
+For additional details on `.podspec` files,
+consult the [CocoaPods Documentation][].
 
 如果希望了解更多有关 `.podspec` 文件更多的信息，请参阅
 [CocoaPods 文档][CocoaPods Documentation] 了解。
@@ -1686,15 +1712,7 @@ file, like any other Dart package.
 与其他的 Dart package 一样，
 所有的 Web 依赖都由文件 `pubspec.yaml` 来处理。
 
-{% comment %}
-
-<!-- Remove until we have better text. -->
-### MacOS
-
-PENDING
-
-{% endcomment %}
-
+[Apple's PackageDescription documentation]: {{site.apple-dev}}/documentation/packagedescription
 [bind-native]: /platform-integration/bind-native-code
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
@@ -1738,6 +1756,7 @@ To distribute skills with your package:
 
 When developers add your package as a dependency, their assistants can
 automatically discover your instructions. To learn more about authoring
-guidelines and best practices, check out [Package skills](/ai/package-skills).
+guidelines and best practices, check out
+[Ship skills with packages](https://dart.dev/tools/pub/package-skills).
 
 [Writing a good plugin]: {{site.flutter-blog}}/writing-a-good-flutter-plugin-1a561b986c9c

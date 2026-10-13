@@ -8,12 +8,12 @@ showBreadcrumbs: false
 ai-translated: true
 ---
 
-As of Flutter {{site.currentFlutterVersion}},
+As of Flutter {{site.documentedFlutterVersion}},
 Flutter supports deploying apps on the following combinations of
 hardware architectures and operating system versions.
 These combinations are called _platforms_.
 
-截至 Flutter {{site.currentFlutterVersion}}，
+截至 Flutter {{site.documentedFlutterVersion}}，
 Flutter 支持在以下硬件架构与操作系统版本组合上部署应用。
 这些组合称为 **platforms（平台）**。
 
@@ -56,7 +56,7 @@ Flutter supports deploying to the following platforms.
     name="iOS"
     icon="mobile"
     arch="Arm64"
-    supported="15 to 26"
+    supported="15 to 27"
     ci-tested="18 and 26"
     unsupported="14 and earlier"
     deploy-to-link="/deployment/ios"
@@ -75,22 +75,14 @@ Flutter supports deploying to the following platforms.
 As Apple phases out Intel-based Macs,
 Flutter is phasing out support for Intel (x64) hardware.
 For details on the timeline and impact,
-check out the [macOS Intel deprecation strategy][].
+refer to the [macOS Intel deprecation strategy][].
 
 随着 Apple 逐步淘汰基于 Intel 处理器的 Mac 电脑，
 Flutter 也将逐步停止对 Intel (x64) 硬件的支持。
 相关时间表和影响的详细信息，请查看 
 [macOS Intel 弃用策略][macOS Intel deprecation strategy]。
 
-If you can't migrate to an [Apple Silicon Mac][],
-you can continue using older Flutter releases from the [SDK archive][].
-
-如果你无法迁移到搭载 [Apple Silicon 的 Mac][Apple Silicon Mac]，
-可以继续使用 [SDK 归档][SDK archive] 中的旧版 Flutter。
-
 [macOS Intel deprecation strategy]: {{site.main-url}}/go/macos-intel-deprecation
-[Apple Silicon Mac]: https://support.apple.com/en-us/116943
-[SDK archive]: /install/archive
 :::
 
 <PlatformsGrid>
@@ -107,7 +99,7 @@ you can continue using older Flutter releases from the [SDK archive][].
     name="macOS"
     icon="laptop_mac"
     arch="x64, Arm64"
-    supported="Monterey (12) to Tahoe (26)"
+    supported="Monterey (12) to Golden Gate (27)"
     ci-tested="Sequoia (15)"
     unsupported="Big Sur (11) and earlier"
     deploy-to-link="/deployment/macos"

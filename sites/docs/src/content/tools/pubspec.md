@@ -79,6 +79,8 @@ dependencies:
   [!flutter_localizations:!] # Required to enable localization
     [!sdk: flutter!]         # Required to enable localization
 
+  [!material_ui!]    # Required for projects that use the Material components pkg
+  [!cupertino_ui!]   # Required for projects that use the Cupertino components pkg
   [!cupertino_icons: ^1.0.8!] # Only required if you use Cupertino (iOS style) icons
 
 dev_dependencies:
@@ -248,15 +250,13 @@ Subfields of `assets`:
 
   `path`：资产文件和目录路径。
 
-* `flavors`: A list of flutter flavors to use with assets
-  at a specific path. To learn more about
-  flavors, visit [Set up flavors for iOS and macOS][] and
-  [Set up flavors for Android][].
+* `flavors`: A list of flutter flavors to use with assets at a specific path.
+  To learn more about flavors, consult the guides on setting up flavors for
+  [Android][], [iOS and macOS][], [Linux][], and [Windows][].
 
   `flavors`：用于特定路径资源的 Flutter flavor 列表。
   要了解相关 flavor 的更多信息，
-  请参阅 [为 iOS 和 macOS 设置 flavor][Set up flavors for iOS and macOS] 
-  和 [为 Android 设置 flavor][Set up flavors for Android]。
+  请参阅 [Android][]、[iOS 和 macOS][iOS and macOS]、[Linux][] 和 [Windows][] 的 flavor 配置指南。
 
 * `platforms`: A list of platforms to use with assets at a
   specific path. Valid values are `android`, `ios`, `web`, `linux`,
@@ -339,8 +339,10 @@ flutter:
           args: ['--tessellate']
 ```
 
-[Set up flavors for iOS and macOS]: /deployment/flavors-ios
-[Set up flavors for Android]: /deployment/flavors
+[Android]: /deployment/flavors
+[iOS and macOS]: /deployment/flavors-ios
+[Linux]: /deployment/flavors-linux
+[Windows]: /deployment/flavors-windows
 [Transforming assets at build time]: /ui/assets/asset-transformation
 [Assets and images]: /ui/assets/assets-and-images
 [asset images in package dependencies]: /ui/assets/assets-and-images#from-packages
@@ -458,15 +460,11 @@ $ flutter run --flavor staging
 ```
 
 To learn how to create Flutter flavors,
-visit [Set up Flutter flavors for Android][] and
-[Set up Flutter flavors for iOS and macOS][].
+consult the guides on setting up flavors for
+[Android][], [iOS and macOS][], [Linux][], and [Windows][].
 
 要了解如何创建 Flutter flavor，
-请参阅 [为 Android 设置 Flutter flavor][Set up Flutter flavors for Android]
-和 [为 iOS 和 macOS 设置 Flutter flavor][Set up Flutter flavors for iOS and macOS]。
-
-[Set up Flutter flavors for Android]: /deployment/flavors
-[Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
+请参阅 [Android][]、[iOS 和 macOS][]、[Linux][] 和 [Windows][] 的 flavor 配置指南。
 
 ### deferred-components field {: #deferred-components }
 
@@ -1101,13 +1099,21 @@ and pubspec files, visit the following:
 
   dart.dev 上介绍的 [Package 依赖项][Package dependencies]
 
-* [Set up Flutter flavors for Android][]
+* [Set up Flutter flavors for Android][Android]
 
-  [为 Android 配置 Flutter flavors][Set up Flutter flavors for Android]
+  [为 Android 配置 Flutter flavors][Android]
 
-* [Set up Flutter flavors for iOS and macOS][]
+* [Set up Flutter flavors for iOS and macOS][iOS and macOS]
 
-  [为 iOS 和 macOS 配置 Flutter flavors][Set up Flutter flavors for iOS and macOS]
+  [为 iOS 和 macOS 配置 Flutter flavors][iOS and macOS]
+
+* [Set up Flutter flavors for Linux][Linux]
+
+  [为 Linux 配置 Flutter flavors][Linux]
+
+* [Set up Flutter flavors for Windows][Windows]
+
+  [为 Windows 配置 Flutter flavors][Windows]
 
 * [Transforming assets at build time][]
 
