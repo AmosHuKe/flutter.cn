@@ -52,7 +52,7 @@ as text might contain complex characters.
 This ensures that every character is counted correctly
 as it appears to the user.
 
-在处理用户的输入内容时，很重要的一点是要使用 [`characters`][]，
+在处理用户的输入内容时，很重要的一点是要使用 [`characters`][characters]，
 因为用户的输入内容可能会包含复杂的字符。
 characters 会保证每一个显示到用户字符都被计数到。
 

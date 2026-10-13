@@ -113,7 +113,7 @@ Extending `SingleTickerProviderStateMixin` allows the state object to be a
 To learn more, consult the [`TickerProvider`][] documentation.
 
 继承的 `SingleTickerProviderStateMixin` 让 state 对象为 `AnimationController` 提供了 `TickerProvider` 的能力。
-要获得更多信息，请查看 [TickerProvider][] 文档。
+要获得更多信息，请查看 [`TickerProvider`][] 文档。
 
 :::
 

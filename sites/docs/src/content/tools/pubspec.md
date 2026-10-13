@@ -464,7 +464,7 @@ consult the guides on setting up flavors for
 [Android][], [iOS and macOS][], [Linux][], and [Windows][].
 
 要了解如何创建 Flutter flavor，
-请参阅 [Android][]、[iOS 和 macOS][]、[Linux][] 和 [Windows][] 的 flavor 配置指南。
+请参阅 [Android][]、[iOS 和 macOS][iOS and macOS]、[Linux][] 和 [Windows][] 的 flavor 配置指南。
 
 ### deferred-components field {: #deferred-components }
 

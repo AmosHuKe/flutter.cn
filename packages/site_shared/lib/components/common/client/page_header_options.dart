@@ -220,7 +220,7 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
               li(
                 [
                   Button(
-                    icon: 'docs',
+                    icon: 'description',
                     content: '查看文档源码',
                     href: sourceUrl,
                     attributes: const {
